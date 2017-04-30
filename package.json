@@ -2,7 +2,7 @@
   "name": "magic-counter-pwa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nmorel.github.io/magic-counter-pwa",
+  "homepage": "https://counter.morel.pro",
   "dependencies": {
     "lodash": "^4.17.4",
     "react": "^15.5.4",
@@ -11,7 +11,6 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "gh-pages": "^0.12.0",
     "react-scripts": "0.9.5",
     "sw-precache": "^5.1.0"
   },
@@ -21,6 +20,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "firebase deploy"
   }
 }
