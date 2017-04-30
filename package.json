@@ -2,7 +2,7 @@
   "name": "magic-counter-pwa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://counter.morel.pro",
+  "homepage": "https://nmorel.github.io/magic-counter-pwa",
   "dependencies": {
     "lodash": "^4.17.4",
     "react": "^15.5.4",
