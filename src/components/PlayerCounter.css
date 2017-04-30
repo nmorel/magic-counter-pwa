@@ -1,0 +1,66 @@
+.PlayerCounter, .PlayerCounter-inner {
+  display: flex;
+  flex: 1;
+  position: relative;
+  border: 0;
+}
+
+.PlayerCounter-content {
+  display: flex;
+  flex: 1;
+}
+
+.PlayerCounter-row .PlayerCounter-content {
+  flex-direction: row;
+}
+
+.PlayerCounter-column .PlayerCounter-content {
+  flex-direction: column;
+}
+
+.PlayerCounter-life-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(32px + (300 - 32) * (100vw - 100px) / (1920 - 100));
+}
+
+.PlayerCounter-action-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(16px + (100 - 16) * (100vw - 100px) / (1920 - 100));
+}
+
+.PlayerCounter-overlay-actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex: 1;
+}
+
+.PlayerCounter-row .PlayerCounter-overlay-actions {
+  flex-direction: row-reverse;
+}
+
+.PlayerCounter-column .PlayerCounter-overlay-actions {
+  flex-direction: column;
+}
+
+.PlayerCounter-overlay-action {
+  flex: 1;
+}
+
+
+.PlayerCounter-name {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
