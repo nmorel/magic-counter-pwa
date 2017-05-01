@@ -10,10 +10,12 @@
   flex: 1;
 }
 
+.PlayerCounter-row .PlayerCounter-overlay-actions,
 .PlayerCounter-row .PlayerCounter-content {
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 
+.PlayerCounter-column .PlayerCounter-overlay-actions,
 .PlayerCounter-column .PlayerCounter-content {
   flex-direction: column;
 }
@@ -44,18 +46,9 @@
   flex: 1;
 }
 
-.PlayerCounter-row .PlayerCounter-overlay-actions {
-  flex-direction: row-reverse;
-}
-
-.PlayerCounter-column .PlayerCounter-overlay-actions {
-  flex-direction: column;
-}
-
 .PlayerCounter-overlay-action {
   flex: 1;
 }
-
 
 .PlayerCounter-name {
   position: absolute;

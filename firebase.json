@@ -1,6 +1,18 @@
 {
   "hosting": {
     "public": "build",
+    "headers": [
+      {
+        // Sets the cache header for 404 pages to cache for 5 minutes
+        "source": "service-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
     "rewrites": [
       {
         "source": "**",
