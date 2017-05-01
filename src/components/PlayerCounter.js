@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import './PlayerCounter.css';
 import * as gameActions from '../actions/gameActions';
 import {counterTypes} from '../constants';
+import {FitText} from './FitText';
 
 import * as _ from 'lodash';
 import {getColor} from '../helper';
@@ -31,13 +32,25 @@ class PlayerCounterComponent extends Component {
           {/* Content */}
           <div className="PlayerCounter-content">
             <div className="PlayerCounter-action-text">
-              +
+              <svg
+                fill="#fff"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>
             </div>
             <div className="PlayerCounter-life-text">
-              {life}
+              <FitText text={life}/>
             </div>
             <div className="PlayerCounter-action-text">
-              -
+              <svg
+                fill="#fff"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 13H5v-2h14v2z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>
             </div>
           </div>
 

@@ -14,7 +14,7 @@ class Root extends Component {
     const layout = this.getLayout();
     this.store = initStore({layout});
 
-    window.addEventListener('resize', debounce((ev) => {
+    window.addEventListener('resize', debounce(() => {
       this.store.dispatch({
         type: LAYOUT_CHANGE,
         payload: this.getLayout(),
@@ -25,7 +25,11 @@ class Root extends Component {
   getLayout = () => {
     const width = document.body.offsetWidth;
     const height = document.body.offsetHeight;
-    return width > height ? 'LANDSCAPE' : 'PORTRAIT';
+    return {
+      width,
+      height,
+      layout: width > height ? 'LANDSCAPE' : 'PORTRAIT'
+    };
   };
 
   render() {

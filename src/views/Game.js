@@ -120,7 +120,7 @@ class GameComponent extends Component {
 export const Game = connect(
   state => ({
     game: state.game,
-    layout: state.layout,
+    layout: state.layout.layout,
   }),
   (dispatch) => ({
     actions: bindActionCreators(gameActions, dispatch)

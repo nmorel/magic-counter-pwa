@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(32px + (300 - 32) * (100vw - 100px) / (1920 - 100));
+  flex: 1;
 }
 
 .PlayerCounter-action-text {
@@ -32,7 +32,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(16px + (100 - 16) * (100vw - 100px) / (1920 - 100));
+}
+
+.PlayerCounter-action-text > svg {
+  height: 60%;
+  width: 60%;
+}
+
+.PlayerCounter-row .PlayerCounter-life-text {
+  max-width: 40%;
+}
+
+.PlayerCounter-column .PlayerCounter-life-text {
+  max-height: 40%;
+}
+
+.PlayerCounter-row .PlayerCounter-action-text {
+  max-width: 30%;
+}
+
+.PlayerCounter-column .PlayerCounter-action-text {
+  max-height: 30%;
 }
 
 .PlayerCounter-overlay-actions {
