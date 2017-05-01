@@ -37,39 +37,3 @@
   flex: 1;
   flex-direction: row;
 }
-
-.Counter {
-  flex: 1;
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
-}
-
-.Action {
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: calc(16px + (100 - 16) * (100vw - 100px) / (1920 - 100));
-}
-
-.Life {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.Life > span {
-  background-color: red;
-  font-size: calc(32px + (200 - 32) * (100vw - 100px) / (1920 - 100));
-}
