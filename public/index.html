@@ -32,7 +32,7 @@
       To create a production bundle, use `npm run build`.
     -->
     <script>
-      if ('serviceWorker' in navigator && window.location.protocol === 'https') {
+      if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
         window.addEventListener('load', function() {
           navigator.serviceWorker.register('%PUBLIC_URL%/service-worker.js');
         });
