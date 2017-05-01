@@ -5,8 +5,7 @@ import './PlayerCounter.css';
 import * as gameActions from '../actions/gameActions';
 import {counterTypes} from '../constants';
 import {FitText} from './FitText';
-
-import * as _ from 'lodash';
+import padStart from 'lodash/padStart';
 import {getColor} from '../helper';
 
 class PlayerCounterComponent extends Component {
@@ -24,7 +23,7 @@ class PlayerCounterComponent extends Component {
   };
 
   render() {
-    const life = _.padStart(this.props.player.life.toString(), 2, '0');
+    const life = padStart(this.props.player.life.toString(), 2, '0');
 
     return (
       <div className={`PlayerCounter PlayerCounter-${this.props.orientation}`} style={this.props.style}>
