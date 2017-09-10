@@ -4,7 +4,6 @@ import {bindActionCreators} from 'redux';
 import './PlayerCounter.css';
 import * as gameActions from '../actions/gameActions';
 import {counterTypes} from '../constants';
-import {FitText} from './FitText';
 import padStart from 'lodash/padStart';
 import {getColor} from '../helper';
 
@@ -23,10 +22,12 @@ class PlayerCounterComponent extends Component {
   };
 
   render() {
-    const life = padStart(this.props.player.life.toString(), 2, '0');
+    const life = (this.props.player.life < 0 ? '-' : '')
+      + padStart(Math.abs(this.props.player.life).toString(), 2, '0');
 
     return (
-      <div className={`PlayerCounter PlayerCounter-${this.props.orientation}`} style={this.props.style}>
+      <div className={`PlayerCounter PlayerCounter-${this.props.orientation}`}
+           style={this.props.style}>
         <div className="PlayerCounter-inner">
           {/* Content */}
           <div className="PlayerCounter-content">
@@ -40,7 +41,9 @@ class PlayerCounterComponent extends Component {
               </svg>
             </div>
             <div className="PlayerCounter-life-text">
-              <FitText text={life}/>
+              <svg viewBox="0 0 24 12">
+                <text x={12} y={10.5} fill="#fff" textAnchor="middle" fontSize={14}>{life}</text>
+              </svg>
             </div>
             <div className="PlayerCounter-action-text">
               <svg
@@ -79,6 +82,7 @@ class PlayerCounterComponent extends Component {
     )
   }
 }
+
 export const PlayerCounter = connect(
   undefined,
   (dispatch) => ({
