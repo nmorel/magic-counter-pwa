@@ -5,17 +5,17 @@
   "homepage": "https://counter.morel.pro",
   "dependencies": {
     "lodash": "^4.17.4",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5",
-    "sw-precache": "^5.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.1.0",
-    "prettier": "^1.7.4"
+    "prettier": "^1.7.4",
+    "react-scripts": "0.9.5",
+    "sw-precache": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,6 +27,9 @@
     "prettier": "prettier --write '**/*.{js,css,json,prettierrc,firebaserc}'"
   },
   "lint-staged": {
-    "**/*.+(js|css|json|prettierrc|firebaserc)": ["prettier --write", "git add"]
+    "**/*.+(js|css|json|prettierrc|firebaserc)": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

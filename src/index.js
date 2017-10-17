@@ -48,6 +48,10 @@ class Root extends Component {
                 case 'redundant':
                   console.error('The installing service worker became redundant.');
                   break;
+
+                default:
+                  // Nothing
+                  break;
               }
             };
           };
