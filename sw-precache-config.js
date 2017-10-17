@@ -5,7 +5,7 @@ module.exports = {
     'build/*.html',
     'build/*.png',
     'build/manifest.json',
-    'build/static/**/!(*map*)'
+    'build/static/**/!(*map*)',
   ],
-  swFilePath: 'build/service-worker.js'
+  swFilePath: 'build/service-worker.js',
 };

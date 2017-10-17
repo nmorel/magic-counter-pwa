@@ -9,7 +9,6 @@ import {PlayerCounter} from '../components/PlayerCounter';
 import chunk from 'lodash/chunk';
 
 class GameComponent extends Component {
-
   onRemovePlayer = () => {
     this.props.actions.removePlayer();
   };
@@ -68,7 +67,10 @@ class GameComponent extends Component {
           style.borderTopColor = 'white';
           style.borderStyle = 'solid';
         }
-        if (players.length === 5 && ((rowIndex === 1 && isLandscape) || (rowIndex === 2 && !isLandscape))) {
+        if (
+          players.length === 5 &&
+          ((rowIndex === 1 && isLandscape) || (rowIndex === 2 && !isLandscape))
+        ) {
           orientation = 'row';
         }
         return (
@@ -86,34 +88,26 @@ class GameComponent extends Component {
         <div key={'row' + rowIndex} className="Game-row">
           {cells}
         </div>
-      )
+      );
     });
 
     return (
       <div className="Game-Full">
-        <div className="Game">
-          {rows}
-        </div>
+        <div className="Game">{rows}</div>
         <div className="Game-menu">
           <div>
             <span>Players :</span>
-            <span
-              className="Game-menu-action"
-              onClick={this.onRemovePlayer}
-            >
+            <span className="Game-menu-action" onClick={this.onRemovePlayer}>
               -
             </span>
             <span>{players.length}</span>
-            <span
-              className="Game-menu-action"
-              onClick={this.onAddPlayer}
-            >
+            <span className="Game-menu-action" onClick={this.onAddPlayer}>
               +
             </span>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -122,7 +116,7 @@ export const Game = connect(
     game: state.game,
     layout: state.layout.layout,
   }),
-  (dispatch) => ({
-    actions: bindActionCreators(gameActions, dispatch)
+  dispatch => ({
+    actions: bindActionCreators(gameActions, dispatch),
   })
 )(GameComponent);

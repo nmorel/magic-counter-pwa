@@ -10,14 +10,14 @@ export function newGame(type) {
 export function resetGame() {
   return {
     type: types.RESET_GAME,
-  }
+  };
 }
 
 export function rollDice(player) {
   return {
     type: types.ROLL_DICE,
     playerId: player.id,
-  }
+  };
 }
 
 export function incrementCounter(counter, player) {
@@ -25,7 +25,7 @@ export function incrementCounter(counter, player) {
     type: types.INC_COUNTER,
     counter,
     playerId: player.id,
-  }
+  };
 }
 
 export function decrementCounter(counter, player) {
@@ -33,24 +33,24 @@ export function decrementCounter(counter, player) {
     type: types.DEC_COUNTER,
     counter,
     playerId: player.id,
-  }
+  };
 }
 
 export function addPlayer() {
   return {
     type: types.ADD_PLAYER,
-  }
+  };
 }
 
 export function removePlayer() {
   return {
     type: types.REMOVE_PLAYER,
-  }
+  };
 }
 
 export function setNumberOfPlayers(numberOfPlayers) {
   return {
     type: types.SET_NUMBER_OF_PLAYERS,
     numberOfPlayers,
-  }
+  };
 }

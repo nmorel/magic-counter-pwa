@@ -9,14 +9,14 @@ import {LAYOUT_CHANGE} from './actions/actionTypes';
 import {initStore} from './store';
 
 class Root extends Component {
-
   componentWillMount() {
     const layout = this.getLayout();
     this.store = initStore({layout});
 
     if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-      navigator.serviceWorker.register(`${process.env.PUBLIC_URL}/service-worker.js`)
-        .then((reg) => {
+      navigator.serviceWorker
+        .register(`${process.env.PUBLIC_URL}/service-worker.js`)
+        .then(reg => {
           // updatefound is fired if service-worker.js changes.
           reg.onupdatefound = () => {
             // The updatefound event implies that reg.installing is set; see
@@ -32,7 +32,9 @@ class Root extends Component {
                     // It's the perfect time to display a "New content is available; please refresh."
                     // message in the page's interface.
                     console.log('New or updated content is available.');
-                    const response = window.confirm('A new version is available. Do you want to reload the page ?');
+                    const response = window.confirm(
+                      'A new version is available. Do you want to reload the page ?'
+                    );
                     if (response) {
                       window.location.reload();
                     }
@@ -50,17 +52,21 @@ class Root extends Component {
             };
           };
         })
-        .catch((e) => {
+        .catch(e => {
           console.error('Error during service worker registration:', e);
         });
     }
 
-    window.addEventListener('resize', debounce(() => {
-      this.store.dispatch({
-        type: LAYOUT_CHANGE,
-        payload: this.getLayout(),
-      })
-    }, 300), true);
+    window.addEventListener(
+      'resize',
+      debounce(() => {
+        this.store.dispatch({
+          type: LAYOUT_CHANGE,
+          payload: this.getLayout(),
+        });
+      }, 300),
+      true
+    );
   }
 
   getLayout = () => {
@@ -69,7 +75,7 @@ class Root extends Component {
     return {
       width,
       height,
-      layout: width > height ? 'LANDSCAPE' : 'PORTRAIT'
+      layout: width > height ? 'LANDSCAPE' : 'PORTRAIT',
     };
   };
 
@@ -78,11 +84,8 @@ class Root extends Component {
       <Provider store={this.store}>
         <Game />
       </Provider>
-    )
+    );
   }
 }
 
-ReactDOM.render(
-  <Root />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Root />, document.getElementById('root'));

@@ -12,7 +12,10 @@
   },
   "devDependencies": {
     "react-scripts": "0.9.5",
-    "sw-precache": "^5.1.0"
+    "sw-precache": "^5.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.1.0",
+    "prettier": "^1.7.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,6 +23,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "prettier": "prettier --write '**/*.{js,css,json,prettierrc,firebaserc}'"
+  },
+  "lint-staged": {
+    "**/*.+(js|css|json|prettierrc|firebaserc)": ["prettier --write", "git add"]
   }
 }

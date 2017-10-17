@@ -1,4 +1,5 @@
-.PlayerCounter, .PlayerCounter-inner {
+.PlayerCounter,
+.PlayerCounter-inner {
   display: flex;
   flex: 1;
   position: relative;

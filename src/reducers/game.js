@@ -57,14 +57,13 @@ class Game {
 const games = {
   standard: new Game('standard', 20, 2),
   duelCommander: new Game('duelCommander', 30, 2),
-  commander: new Game('commander', 40, 3)
+  commander: new Game('commander', 40, 3),
 };
 
 const initialState = games.standard.newGame();
 
-export default function (state = initialState, action = {}) {
+export default function(state = initialState, action = {}) {
   switch (action.type) {
-
     // New game
     case types.NEW_GAME: {
       return games[action.game].newGame();
@@ -84,7 +83,7 @@ export default function (state = initialState, action = {}) {
             return {
               ...player,
               dice: random(1, 20),
-            }
+            };
           } else {
             return player;
           }
@@ -101,7 +100,7 @@ export default function (state = initialState, action = {}) {
             return {
               ...player,
               [action.counter.id]: player[action.counter.id] + 1,
-            }
+            };
           } else {
             return player;
           }
@@ -118,7 +117,7 @@ export default function (state = initialState, action = {}) {
             return {
               ...player,
               [action.counter.id]: player[action.counter.id] - 1,
-            }
+            };
           } else {
             return player;
           }
@@ -131,10 +130,7 @@ export default function (state = initialState, action = {}) {
       const game = games[state.type];
       return {
         ...state,
-        players: [
-          ...state.players,
-          game.newPlayer(state.players.length + 1),
-        ],
+        players: [...state.players, game.newPlayer(state.players.length + 1)],
       };
     }
 
@@ -157,7 +153,7 @@ export default function (state = initialState, action = {}) {
         const game = games[state.type];
         players = [...state.players];
         for (let i = state.players.length; i < action.numberOfPlayers; i++) {
-          players.push(game.newPlayer(i))
+          players.push(game.newPlayer(i));
         }
       } else {
         players = state.players.slice(0, action.numberOfPlayers - 1);

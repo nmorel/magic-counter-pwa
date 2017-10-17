@@ -1,0 +1,8 @@
+bower_components/
+node_modules/
+static/
+dist/
+package-lock.json
+*.min.js
+**/.meteor/local/
+*.html
